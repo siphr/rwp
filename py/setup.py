@@ -4,8 +4,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="rwp",
-    py_modules=['rwp'],
+    name="rwpk",
+    py_modules=['rwpk'],
     version="0.0.1",
     keywords=["pakistani", "urdu", "sindhi", "random", "words", "generator"],
     description="Sindhi word/phrase generator.",
@@ -13,15 +13,15 @@ setup(
 
     project_urls={
         'Homepage': 'https://www.techtum.dev/work-rwp-220314.html',
-        'Source': 'https://github.com/siphr/rwp',
-        'Tracker': 'https://github.com/siphr/rwp/issues',
+        'Source': 'https://github.com/siphr/rwpk',
+        'Tracker': 'https://github.com/siphr/rwpk/issues',
     },
     author="siphr",
     author_email="pypi@techtum.dev",
 
-    packages=['rwp'],
+    packages=['rwpk'],
     package_data = {
-        'rwp':['languages/*']
+        'rwpk':['languages/*']
         },
     platforms="any",
 )
