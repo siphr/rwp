@@ -1,29 +1,34 @@
 # Maintainer: siphr <archlinux@techtum.dev>
-pkgname=rwu
-pkgver=0.0
-pkgrel=6
-pkgdesc="Random Urdu words/phrases generator."
+
+pkgname=rwp
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Random Pakistani languages words/phrases generator."
 depends=(python)
-arch=(x86_64)
-source=("https://github.com/siphr/urw.git")
-url=https://www.techtum.dev/work-urw-220310.html
+arch=(any)
+source=("https://github.com/siphr/rwp/archive/refs/tags/$pkgver.tar.gz")
+url=https://www.techtum.dev/work-rwp-220314.html
 license=('MIT')
 
 build() {
-    echo "PREPARING..."
-    pip install -U urw
+    echo "BUILDING..."
+    cd "$srcdir/$pkgname-$pkgver/py/"
+    python setup.py build
     
-    echo "echo BUILD DATE: `date`" > rwu
-    echo "python -m urw.urw \$@" >> rwu
-
-    chmod +x $srcdir/rwu
+    echo -e '#!/bin/sh\n\nexec python -m rwp.rwp "$@"' > _rwp
 }
 
 package() {
     echo "INSTALLING..."
+    cd "$srcdir/$pkgname-$pkgver/py/"
+    python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
     mkdir -p $pkgdir/usr/bin
-    cp "$srcdir/rwu" "$pkgdir/usr/bin/rwu"
-    echo 'Finished setting up rwu.'
+    mv _rwp "$pkgdir/usr/bin/rwp"
+    chmod +x $pkgdir/usr/bin/rwp
+
+    install -Dm644 ../LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    echo 'Finished setting up rwp.'
 }
 
-md5sums=('SKIP')
+md5sums=('9d9707a5d2ce529c6db4f2f7ac38e666')
