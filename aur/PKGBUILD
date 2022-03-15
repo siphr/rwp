@@ -2,7 +2,7 @@
 
 _pypkgname=rwpk
 pkgname=rwp
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 pkgdesc="Random Pakistani languages words/phrases generator."
 depends=(python)
@@ -32,4 +32,4 @@ package() {
     echo 'Finished setting up rwp.'
 }
 
-md5sums=('cd22732b313ed685ec422d959f8b3401')
+md5sums=('cd3a065a587dab26ab6e04ad5cf27a85')

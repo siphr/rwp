@@ -5,7 +5,7 @@ import sys
 from argparse import ArgumentParser
 import requests as r
 import random
-from rwp import languages
+from rwpk import languages
 
 
 def show_supported_languages(exe_path):
