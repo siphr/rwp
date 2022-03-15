@@ -48,5 +48,4 @@ if __name__ == '__main__':
 
             ans = random_words(exe_path, args.language, args.number_of_words)
 
-
-    print('\033[1mRESULT\033[0m {}'.format(ans))
+            print('\033[1mRESULT\033[0m {}'.format(ans))

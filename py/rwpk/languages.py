@@ -22,6 +22,6 @@ def get_supported_languages(exe_path):
 
     languages = []
     for l in ls:
-        languages.append(l.split('_')[0].capitalize())
+        languages.append(l.split('.')[0].capitalize())
 
     return languages

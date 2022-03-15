@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 setup(
     name="rwpk",
     py_modules=['rwpk'],
-    version="0.0.2",
+    version="0.0.3",
     keywords=["pakistani", "urdu", "sindhi", "random", "words", "generator"],
     description="Pakistani word/phrase generator.",
     long_description=open('README.md').read(),
