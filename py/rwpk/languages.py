@@ -6,8 +6,8 @@ import os
 _DATA='languages'
 
 def get_language_pool(language, exe_path):
-    if language == 'urdu': encoding = 'utf-16'
-    elif language == 'sindhi': encoding = 'utf-8'
+    if language.lower() == 'urdu': encoding = 'utf-16'
+    elif language.lower() == 'sindhi': encoding = 'utf-8'
 
     file_path = '{}/{}/{}.txt'.format(exe_path, _DATA, language)
 
