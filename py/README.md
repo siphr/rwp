@@ -1,4 +1,4 @@
-URW
+RWP
 ===
 
 A Pakistani language random word generator.
@@ -13,8 +13,8 @@ Uses a predefined set of words for enumeration.
 Package Usage
 -------------
 
-from rwp import rwp
+from rwpk import rwpk
 
 \# show a phrase made of n=2 random words
 
-rwp.show_random_words(2)
+rwpk.show_random_words('urdu', 2)
